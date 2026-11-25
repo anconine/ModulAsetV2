@@ -31,6 +31,14 @@ namespace Usadi.Valid49.BO
       set { _Subunit = value; }
     }
     #endregion
+    #region Property Kdklas
+    private string _Kdklas;
+    public string Kdklas
+    {
+      get { return _Kdklas; }
+      set { _Kdklas = value; }
+    }
+    #endregion
 
     public DlgRptDaftpenyusutanControl()
     {
@@ -95,7 +103,8 @@ namespace Usadi.Valid49.BO
       bool enableFilter = string.IsNullOrEmpty(GlobalAsp.GetRequestIdPrev());
       HashTableofParameterRow hpars = new HashTableofParameterRow();
       hpars.Add(DaftunitLookupControl.Instance.GetLookupParameterRow(this, false));
-
+      hpars.Add(new ParameterRowSelect(ConstantDict.GetColumnTitle("Kdklas=Kelas Aset"),
+       GetList(new JklasRptLookupControl()), "Kdklas=Uraiklas", 54).SetEnable(enableFilter));
       hpars.Add(new ParameterRowSelect(ConstantDict.GetColumnTitle("Bulan"),
         GetList(new DmbulanLookupControl()), "Bulan=Nmbulan", 27).SetEnable(enableFilter));
 
@@ -175,6 +184,7 @@ namespace Usadi.Valid49.BO
 
       Hashtable Params = new Hashtable();
       Params["@unitkey"] = Unitkey;
+      Params["@kdklas"] = Kdklas;
       Params["@bulan"] = Bulan;
       Params["@kdtahun"] = Kdtahun;
       Params["@subunit"] = Subunit;

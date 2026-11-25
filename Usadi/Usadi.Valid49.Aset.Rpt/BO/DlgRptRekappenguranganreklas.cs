@@ -127,9 +127,12 @@ namespace Usadi.Valid49.BO
          new ParamControl() { Kdpar="11",Nmpar="Aset Lancar"}
         ,new ParamControl() { Kdpar="13",Nmpar="Aset Tetap"}
         ,new ParamControl() { Kdpar="15",Nmpar="Aset Lainnya"}
+        ,new ParamControl() { Kdpar="16",Nmpar="Properti Investasi"}
       });
       hpars.Add(new ParameterRow(ConstantDict.GetColumnTitleEntry("Kelaset=Kelompok Aset"), ParameterRow.MODE_SELECT,
        listkelaset, "Kdpar=Nmpar", 54).SetEnable(enableFilter));
+      hpars.Add(new ParameterRowSelect(ConstantDict.GetColumnTitle("Level=Level"),
+       GetList(new StruasetLookupControl()), "Level=Nmlevel", 54).SetEnable(enableFilter));
       //hpars.Add(new ParameterRowDate(this, ParameterRow.MODE_DATE_RANGE).SetEnable(enableFilter));
       hpars.Add(new ParameterRowDate(this, ConstantDict.GetColumnTitle("Tglawal=Tanggal Awal"), true).SetEnable(true));
       hpars.Add(new ParameterRowDate(this, ConstantDict.GetColumnTitle("Tglakhir=Tanggal Akhir"), true).SetEnable(true));
@@ -195,6 +198,7 @@ namespace Usadi.Valid49.BO
       Params["@unitkey"] = Unitkey;
       Params["@Kdklas"] = Kdklas;
       Params["@Kelompok"] = Kelaset;
+      Params["@kdlevel"] = Level;
       Params["@tglawal"] = Tglawal; //Tgl1;   //Tglawal;
       Params["@tglakhir"] = Tglakhir; //Tgl2; //Tglakhir;
       Params["@subunit"] = Subunit;

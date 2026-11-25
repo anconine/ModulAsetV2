@@ -234,8 +234,8 @@ namespace Usadi.Valid49.BO
       Params["@Kdklas"] = Kdklas;
       Params["@Kelompok"] = Kelaset;
       Params["@Jenisaset"] = Kdkib;
-      Params["@tglawal"] = Tglawal; //Tgl1;   //Tglawal;
-      Params["@tglakhir"] = Tglakhir; //Tgl2; //Tglakhir;
+      Params["@tglawal"] = Tglawal.ToString("dd/MM/yyyy"); //Tgl1;   //Tglawal;
+      Params["@tglakhir"] = Tglakhir.ToString("dd/MM/yyyy"); //Tgl2; //Tglakhir;
       Params["@subunit"] = Subunit;
 
 

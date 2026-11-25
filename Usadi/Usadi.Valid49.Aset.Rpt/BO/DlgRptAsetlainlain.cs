@@ -237,7 +237,7 @@ namespace Usadi.Valid49.BO
       Params["@unitkey"] = Unitkey;
       Params["@asetkey"] = Asetkey;
       Params["@tglawal"] = Tglawal;
-      Params["@tglakhir"] = Tglakhir;
+      Params["@tglakhir"] = Tglakhir.ToString("dd/MM/yyyy");
       Params["@kdklas"] = Kdklas;
       Params["@subunit"] = Subunit;
 

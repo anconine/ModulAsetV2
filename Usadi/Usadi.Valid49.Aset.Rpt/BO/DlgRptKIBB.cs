@@ -238,8 +238,8 @@ namespace Usadi.Valid49.BO
       Hashtable Params = new Hashtable();
       Params["@unitkey"] = Unitkey;
       Params["@asetkey"] = Asetkey;
-      Params["@tglawal"] = Tglawal;
-      Params["@tglakhir"] = Tglakhir;
+      Params["@tglawal"] = Tglawal.ToString("dd/MM/yyyy");
+      Params["@tglakhir"] = Tglakhir.ToString("dd/MM/yyyy");
       Params["@kdklas"] = Kdklas;
       Params["@subunit"] = Subunit;
 
